@@ -1,0 +1,1946 @@
+/* =========================================================
+   BEART / BRT IMOBILIÁRIA
+   LANDING PAGE — FORMAÇÃO IMOBILIÁRIA
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+:root {
+    --gold: #D4A72C;
+    --gold-light: #f0ca5c;
+    --gold-dark: #a77d15;
+    --black: #080a0d;
+    --black-soft: #0d1015;
+    --black-card: #11151b;
+    --white: #ffffff;
+    --text: #edf1f7;
+    --text-soft: #a9b0bb;
+    --border: rgba(255, 255, 255, 0.10);
+    --glass: rgba(12, 15, 20, 0.68);
+    --radius: 18px;
+    --transition: 0.35s ease;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+    min-width: 320px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   VÍDEO GLOBAL — FUNDO DE TODA A LANDING PAGE
+========================================================= */
+
+.page-background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.page-background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 7, 10, 0.90) 0%,
+            rgba(5, 7, 10, 0.72) 48%,
+            rgba(5, 7, 10, 0.86) 100%
+        );
+}
+
+
+/* =========================================================
+   CAMADA DOS ELEMENTOS DA PÁGINA
+========================================================= */
+
+section,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+        background 0.4s ease,
+        backdrop-filter 0.4s ease,
+        border-color 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(8, 10, 13, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: auto;
+    height: 48px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+header nav a {
+    position: relative;
+    color: rgba(255, 255, 255, 0.86);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: var(--gold-light);
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 25px;
+    border-radius: 50px;
+    background: var(--gold);
+    color: #111;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow:
+        0 10px 30px rgba(212, 167, 44, 0.18);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 35px rgba(212, 167, 44, 0.28);
+}
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--white);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 5% 80px;
+    overflow: hidden;
+    background: transparent;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO HERO
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
+
+.hero-label {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.hero h1 {
+    max-width: 800px;
+    color: var(--white);
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 0.98;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--gold);
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+========================================================= */
+
+.hero p {
+    max-width: 690px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   CONTADOR
+========================================================= */
+
+.countdown {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 42px;
+}
+
+.countdown-item {
+    min-width: 105px;
+    padding: 17px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.countdown-item strong {
+    color: var(--gold-light);
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.countdown-item span {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FORMAÇÃO — INFORMAÇÕES
+========================================================= */
+
+.formation-info {
+    padding: 110px 5%;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212, 167, 44, 0.07),
+            transparent 35%
+        ),
+        rgba(8, 10, 13, 0.58);
+}
+
+.section-header {
+    max-width: 760px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.section-header > span,
+.registration-text > span,
+.trainer-content > span,
+.audience-content > span,
+.cta > span {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-header h2 {
+    color: var(--white);
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   INFO GRID
+========================================================= */
+
+.info-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.info-card {
+    min-width: 0;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.035);
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 167, 44, 0.4);
+    background: rgba(255, 255, 255, 0.055);
+}
+
+/* ÍCONES DOS CARDS */
+
+.info-card > i {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-size: 28px;
+    text-align: center;
+}
+
+.info-card span {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.info-card h3 {
+    margin-top: 14px;
+    color: var(--white);
+    font-size: 27px;
+}
+
+.info-card p {
+    margin-top: 5px;
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MÓDULOS
+========================================================= */
+
+.modules {
+    padding: 110px 5%;
+    background: rgba(13, 16, 21, 0.58);
+}
+
+.modules-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.module-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    gap: 24px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+    transition: var(--transition);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 167, 44, 0.35);
+}
+
+.module-card:hover::before {
+    height: 100%;
+}
+
+.module-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    color: var(--gold);
+    border: 1px solid rgba(212, 167, 44, 0.35);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.module-card h3 {
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 7px;
+}
+
+.module-card strong {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.module-card p {
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   MÓDULOS — VER MAIS / VER MENOS
+========================================================= */
+
+.module-hidden {
+    display: none;
+}
+
+.module-hidden.module-visible {
+    display: flex;
+}
+
+.modules-more {
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modules-more .btn-primary {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PARA QUEM É
+========================================================= */
+
+.audience {
+    position: relative;
+    padding: 130px 5%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(212, 167, 44, 0.10),
+            transparent
+        ),
+        rgba(8, 10, 13, 0.58);
+}
+
+.audience-content {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.audience-content h2 {
+    color: var(--white);
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.audience-content p {
+    max-width: 700px;
+    margin: 0 auto 12px;
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   FORMADOR
+========================================================= */
+
+.trainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 5%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 80px;
+    background: rgba(8, 10, 13, 0.42);
+}
+
+.trainer-image {
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212, 167, 44, 0.12),
+            rgba(255, 255, 255, 0.025)
+        );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.trainer-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+}
+
+.trainer-content {
+    min-width: 0;
+}
+
+.trainer-content h2 {
+    color: var(--white);
+    font-size: clamp(40px, 5vw, 65px);
+    margin-bottom: 20px;
+}
+
+.trainer-content p {
+    max-width: 600px;
+    color: var(--text-soft);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REDES SOCIAIS DO FORMADOR
+========================================================= */
+
+.trainer-social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.trainer-social a {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.045);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 18px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.trainer-social a:hover {
+    color: var(--gold-light);
+    border-color: rgba(212, 167, 44, 0.40);
+    background: rgba(212, 167, 44, 0.08);
+    transform: translateY(-3px);
+}
+
+.trainer-social a i {
+    line-height: 1;
+}
+
+
+/* =========================================================
+   INSCRIÇÃO
+========================================================= */
+
+.registration {
+    padding: 110px 5%;
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(212, 167, 44, 0.08),
+            transparent 35%
+        ),
+        rgba(13, 16, 21, 0.60);
+}
+
+.registration-content {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.registration-text {
+    min-width: 0;
+}
+
+.registration-text h2 {
+    color: var(--white);
+    font-size: clamp(38px, 4.5vw, 60px);
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.registration-text p {
+    max-width: 500px;
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.registration-card {
+    width: 100%;
+    min-width: 0;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    outline: none;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.055);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-confirm {
+    width: 100%;
+    min-height: 52px;
+    border: none;
+    border-radius: 50px;
+    background: var(--gold);
+    color: #111;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-confirm:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CTA FINAL
+========================================================= */
+
+.cta {
+    padding: 120px 5%;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212, 167, 44, 0.18),
+            transparent 55%
+        ),
+        rgba(10, 12, 16, 0.64);
+}
+
+.cta h2 {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: var(--white);
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1;
+}
+
+.cta p {
+    margin-bottom: 35px;
+    color: var(--text-soft);
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 70px 5% 30px;
+    background: rgba(5, 6, 8, 0.88);
+    border-top: 1px solid var(--border);
+}
+
+.footer-top {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 55px;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 50px;
+}
+
+.footer-first-child,
+.footer-links {
+    min-width: 0;
+}
+
+.footer-logo {
+    width: auto;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.footer-first-child p {
+    max-width: 280px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-top h4 {
+    margin-bottom: 18px;
+    color: var(--white);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-top a {
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-top a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP GRANDE
+   ACIMA DE 1200PX
+========================================================= */
+
+@media (min-width: 1201px) {
+
+    .hero-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   ATÉ 1200PX
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    header {
+        padding: 0 4%;
+    }
+
+    .hero {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .formation-info,
+    .modules,
+    .audience,
+    .registration {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 35px;
+    }
+}
+
+
+/* =========================================================
+   TABLETS / NOTEBOOKS PEQUENOS
+   ATÉ 992PX
+========================================================= */
+
+@media (max-width: 992px) {
+
+    header nav {
+        gap: 18px;
+    }
+
+    header nav a {
+        font-size: 13px;
+    }
+
+    header > .btn-primary {
+        display: none;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        min-height: 760px;
+        padding-top: 100px;
+        padding-bottom: 70px;
+        align-items: center;
+    }
+
+    .hero h1 {
+        max-width: 700px;
+    }
+
+
+    /* =====================================================
+       MÓDULOS
+    ===================================================== */
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =====================================================
+       FORMADOR
+    ===================================================== */
+
+    .trainer {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        max-width: 800px;
+    }
+
+    .trainer-image {
+        min-height: 420px;
+    }
+
+    .trainer-image img {
+        min-height: 420px;
+    }
+
+
+    /* =====================================================
+       INSCRIÇÃO
+    ===================================================== */
+
+    .registration-content {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+    }
+
+    .registration-text {
+        text-align: center;
+    }
+
+    .registration-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+   ATÉ 768PX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+        height: 70px;
+        padding: 0 22px;
+        z-index: 1001;
+    }
+
+    .logo-img {
+        height: 42px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1002;
+    }
+
+
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 82%;
+        max-width: 350px;
+        height: 100vh;
+        padding: 110px 30px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        background: rgba(8, 10, 13, 0.96);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 1000;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+        right: 0;
+    }
+
+    .mobile-menu a:not(.btn-primary) {
+        color: var(--white);
+        font-size: 17px;
+        text-decoration: none;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        /* EFEITO DE TRANSIÇÃO DO HOVER */
+        transition: var(--transition);
+    }
+
+    /* =====================================================
+       HOVER DO MENU MOBILE
+    ===================================================== */
+
+    .mobile-menu a:not(.btn-primary):hover {
+        color: var(--gold-light);
+        border-bottom-color: rgba(212, 167, 44, 0.45);
+        padding-left: 6px;
+    }
+
+    .mobile-menu .btn-primary {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       HERO
+       AJUSTADO PARA NÃO FICAR MUITO BAIXO
+    ===================================================== */
+
+    .hero {
+        min-height: 760px;
+        padding:
+            100px 22px
+            55px;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 8vw, 56px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       CONTADOR
+    ===================================================== */
+
+    .countdown {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 30px;
+    }
+
+    .countdown-item {
+        flex: 1;
+        min-width: 75px;
+        padding: 14px 8px;
+    }
+
+    .countdown-item strong {
+        font-size: 24px;
+    }
+
+    .countdown-item span {
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       SEÇÕES
+    ===================================================== */
+
+    .formation-info,
+    .modules,
+    .audience,
+    .registration {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    .section-header h2 {
+        font-size: 36px;
+    }
+
+
+    /* =====================================================
+       INFO
+       CONTEÚDO CENTRALIZADO NOS CARDS
+    ===================================================== */
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .info-card {
+        padding: 23px 18px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-card > i {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .info-card h3 {
+        font-size: 22px;
+    }
+
+
+    /* =====================================================
+       MÓDULOS
+    ===================================================== */
+
+    .module-card {
+        padding: 24px 20px;
+    }
+
+
+    /* =====================================================
+       BOTÃO DOS MÓDULOS
+    ===================================================== */
+
+    .modules-more {
+        margin-top: 28px;
+    }
+
+
+    /* =====================================================
+       AUDIENCE
+    ===================================================== */
+
+    .audience {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .audience-content h2 {
+        font-size: clamp(36px, 8vw, 52px);
+    }
+
+
+    /* =====================================================
+       FORMADOR
+    ===================================================== */
+
+    .trainer {
+        padding: 80px 22px;
+    }
+
+    .trainer-image,
+    .trainer-image img {
+        min-height: 380px;
+    }
+
+    .trainer-content {
+        text-align: center;
+    }
+
+    .trainer-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trainer-social {
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       INSCRIÇÃO
+    ===================================================== */
+
+    .registration-content {
+        gap: 40px;
+    }
+
+    .registration-card {
+        padding: 25px 20px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+        padding: 90px 22px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        padding: 60px 22px 25px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEIS
+   ATÉ 600PX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+        padding: 0 18px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+
+    /* =====================================================
+       HERO
+       CORREÇÃO PRINCIPAL PARA TELAS PEQUENAS
+    ===================================================== */
+
+    .hero {
+        min-height: auto;
+        padding:
+            105px 18px
+            50px;
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.02;
+        letter-spacing: -1.2px;
+        margin-bottom: 22px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .hero .btn-primary {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       CONTADOR
+    ===================================================== */
+
+    .countdown {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 25px;
+    }
+
+    .countdown-item {
+        min-width: 0;
+        width: 100%;
+        padding: 13px 4px;
+    }
+
+    .countdown-item strong {
+        font-size: 22px;
+    }
+
+    .countdown-item span {
+        font-size: 8px;
+        letter-spacing: 0.6px;
+    }
+
+
+    /* =====================================================
+       INFO
+       CONTEÚDO CENTRALIZADO NOS CARDS
+    ===================================================== */
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-card > i {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card span,
+    .info-card h3,
+    .info-card p {
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       MÓDULOS
+    ===================================================== */
+
+    .module-card {
+        gap: 16px;
+        padding: 22px 18px;
+    }
+
+    .module-number {
+        width: 43px;
+        height: 43px;
+        font-size: 12px;
+    }
+
+    .module-card h3 {
+        font-size: 18px;
+    }
+
+    .module-card p {
+        font-size: 13px;
+    }
+
+    .modules-more .btn-primary {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FORMADOR
+    ===================================================== */
+
+    .trainer {
+        padding:
+            70px 18px;
+    }
+
+    .trainer-image,
+    .trainer-image img {
+        min-height: 330px;
+    }
+
+    .trainer-content h2 {
+        font-size: 42px;
+    }
+
+    .trainer-content p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .trainer-social {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .trainer-social a {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+
+    /* =====================================================
+       INSCRIÇÃO
+    ===================================================== */
+
+    .registration-text h2 {
+        font-size: 40px;
+    }
+
+    .registration-text p {
+        font-size: 15px;
+    }
+
+    .registration-card {
+        padding: 22px 16px;
+        border-radius: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding:
+            13px 14px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+        padding:
+            80px 18px;
+    }
+
+    .cta h2 {
+        font-size: 42px;
+    }
+
+    .cta p {
+        font-size: 15px;
+    }
+
+    .cta .btn-primary {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-first-child {
+        text-align: center;
+    }
+
+    .footer-first-child p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEIS PEQUENOS
+   ATÉ 400PX
+========================================================= */
+
+@media (max-width: 400px) {
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+        height: 66px;
+        padding:
+            0 15px;
+    }
+
+    .logo-img {
+        height: 37px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+
+    /* =====================================================
+       HERO
+       MAIS COMPACTO
+    ===================================================== */
+
+    .hero {
+        min-height: auto;
+        padding:
+            95px 18px
+            45px;
+        align-items: center;
+    }
+
+    .hero-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       CONTADOR
+    ===================================================== */
+
+    .countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .countdown-item {
+        min-width: 0;
+        padding:
+            12px 3px;
+    }
+
+    .countdown-item strong {
+        font-size: 20px;
+    }
+
+    .countdown-item span {
+        font-size: 7px;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* =====================================================
+       SEÇÕES
+    ===================================================== */
+
+    .formation-info,
+    .modules,
+    .audience,
+    .registration {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .section-header h2 {
+        font-size: 31px;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       INFO
+       CONTEÚDO CENTRALIZADO NOS CARDS
+    ===================================================== */
+
+    .info-card {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-card > i {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card span,
+    .info-card h3,
+    .info-card p {
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       MÓDULOS
+    ===================================================== */
+
+    .module-card {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .module-number {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* =====================================================
+       AUDIENCE
+    ===================================================== */
+
+    .audience-content h2 {
+        font-size: 35px;
+    }
+
+    .audience-content p {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       FORMADOR
+    ===================================================== */
+
+    .trainer {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .trainer-image,
+    .trainer-image img {
+        min-height: 300px;
+    }
+
+    .trainer-content h2 {
+        font-size: 37px;
+    }
+
+    .trainer-content p {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       FORMULÁRIO
+    ===================================================== */
+
+    .registration-text h2 {
+        font-size: 36px;
+    }
+
+    .registration-card {
+        padding:
+            20px 14px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   TELEMÓVEIS MUITO PEQUENOS
+   ATÉ 350PX
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .hero {
+        padding-top: 90px;
+        padding-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-label {
+        font-size: 8px;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .countdown-item {
+        min-width: 0;
+        padding: 11px 2px;
+    }
+
+    .countdown-item strong {
+        font-size: 19px;
+    }
+
+    .countdown-item span {
+        font-size: 7px;
+        letter-spacing: 0.4px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .module-card h3 {
+        font-size: 17px;
+    }
+
+    .trainer-content h2 {
+        font-size: 34px;
+    }
+
+    .registration-text h2 {
+        font-size: 33px;
+    }
+
+    .cta h2 {
+        font-size: 33px;
+    }
+
+
+    /* =====================================================
+       INFO
+       CONTEÚDO CENTRALIZADO
+    ===================================================== */
+
+    .info-card {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-card > i {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-card span,
+    .info-card h3,
+    .info-card p {
+        text-align: center;
+    }
+}
